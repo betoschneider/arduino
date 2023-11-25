@@ -1,3 +1,6 @@
+//Autor: Roberto Schneider
+//25/11/2023
+//Acendimento de leds em sequência
 
 //definindo nome para as portas
 #define pinLed0 7
@@ -15,15 +18,16 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  digitalWrite(pinLed0, HIGH);
-  delay(200);
-  digitalWrite(pinLed1, HIGH);
-  delay(200);
-  digitalWrite(pinLed2, HIGH);
-  delay(200);
-  digitalWrite(pinLed0, LOW);
+  int valorIntervalo = 100;   //variavel com o valor de tempo para aguardar
+  
+  digitalWrite(pinLed0, HIGH); //acende primeiro led
+  delay(valorIntervalo);       //aguarda (tempo em milissegundos)
+  digitalWrite(pinLed1, HIGH); //acende segundo led
+  delay(valorIntervalo);
+  digitalWrite(pinLed2, HIGH); //acente terceiro led
+  delay(valorIntervalo);
+  digitalWrite(pinLed0, LOW);  //apaga primeiro led
   digitalWrite(pinLed1, LOW);
   digitalWrite(pinLed2, LOW);
-  delay(200);
-
+  delay(valorIntervalo);
 }
